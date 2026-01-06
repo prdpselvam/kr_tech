@@ -1,0 +1,1089 @@
+<!--
+KR Tech - Full Single Page Website (WITH all your images + PCB + Smart Billing)
+================================================================================
+HOW TO USE:
+1) Create a folder: krtech-site/
+2) Save this file as: index.html
+3) Put ALL images in the SAME folder with these exact names:
+
+FROM EARLIER SECTIONS:
+- agricultural-robots-work-smart-farms-featured.jpg
+- remote-monitoring-of-servers-com-1.webp
+- ANPR-working-1024x538.png
+- New-Project-1.png
+- image1-4.png
+- applsci-12-03396-g001.png
+- Smart-Factory-Ecosystem-Diagram.webp
+- device-scaled.jpg
+- 1323.png
+
+PCB SECTION:
+- pcb-design-complexity.png
+- pcb-designing-and-fabrication-500x500.webp
+- Embedded-System-Avench.jpg
+
+SMART BILLING SECTION:
+- 684d85682ade8bae25242d47_67ed51a6da432d260a80f823_67c81a4e220f7f1f485d075c_Supermarkets_Fig3.webp
+- 684d85682ade8bae25242d40_67ed51a6da432d260a80f7f5_67c81a2cdaafb86a7bda4d64_Supermarkets_Fig2.webp
+- 1_tUdFs2QVS7PYZXT2pQ681w.jpg
+
+4) Open index.html in your browser.
+
+Your Contact:
+Phone/WhatsApp: +91 96550 78917
+Email: krtechautomation@gmail.com
+Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>KR Tech | Automation • IoT • AI Computer Vision</title>
+  <meta name="description" content="KR Tech builds customized Electrical, Electronics, IoT and AI Computer Vision automation solutions since 2013 in Gobichettipalayam, Tamil Nadu." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#070A12;
+      --panel:#0C1020;
+      --card: rgba(255,255,255,.06);
+      --line: rgba(255,255,255,.12);
+      --text:#EAF0FF;
+      --muted:#A9B4D6;
+      --brand:#3B82F6;
+      --brand2:#22C55E;
+      --accent:#FACC15;
+      --shadow: 0 18px 50px rgba(0,0,0,.45);
+      --r:18px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 15% 10%, rgba(59,130,246,.30), transparent 55%),
+        radial-gradient(900px 500px at 85% 20%, rgba(34,197,94,.22), transparent 55%),
+        radial-gradient(800px 500px at 50% 95%, rgba(250,204,21,.14), transparent 55%),
+        var(--bg);
+      line-height:1.5;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(1180px, 92%); margin:0 auto;}
+    .small{font-size:12px;color:var(--muted)}
+    .muted{color:var(--muted)}
+    .pill{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:8px 12px; border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      color:var(--muted); font-size:12px;
+      width:fit-content;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:11px 14px; border-radius:14px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      color:var(--text); font-weight:600; gap:10px;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      cursor:pointer; white-space:nowrap;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.22);}
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(59,130,246,1), rgba(34,197,94,1));
+      border:none; color:#06102B;
+      box-shadow: 0 18px 50px rgba(59,130,246,.18);
+    }
+    .btn.primary:hover{filter:saturate(1.05)}
+    .grid{display:grid; gap:14px;}
+    .grid-3{grid-template-columns: repeat(3, 1fr);}
+    .grid-2{grid-template-columns: repeat(2, 1fr);}
+
+    /* NAV */
+    .nav{
+      position:sticky; top:0; z-index:60;
+      backdrop-filter: blur(14px);
+      background: rgba(7,10,18,.58);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0; gap:14px;
+    }
+    .brand{display:flex; align-items:center; gap:10px;}
+    .logo{
+      width:40px; height:40px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(59,130,246,1), rgba(34,197,94,1));
+      display:grid; place-items:center;
+      border:1px solid rgba(255,255,255,.18);
+      box-shadow: 0 10px 30px rgba(59,130,246,.25);
+    }
+    .logo span{font-weight:800;color:#06102B}
+    .menu{display:flex; gap:10px; align-items:center; color:var(--muted); font-weight:500; flex-wrap:wrap;}
+    .menu a{padding:8px 10px; border-radius:10px;}
+    .menu a:hover{background:rgba(255,255,255,.06); color:var(--text);}
+
+    /* HERO */
+    header{padding:54px 0 22px;}
+    .hero{
+      display:grid; grid-template-columns: 1.1fr .9fr; gap:18px; align-items:stretch;
+    }
+    h1{
+      margin:12px 0 10px;
+      font-size: clamp(32px, 4vw, 52px);
+      line-height:1.1;
+      letter-spacing:-.6px;
+    }
+    .lead{margin:0 0 16px; color:var(--muted); font-size: clamp(14px, 1.5vw, 18px); max-width:60ch;}
+    .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;}
+    .stats{display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; margin-top:16px;}
+    .stat{
+      padding:14px; border-radius: var(--r);
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .stat b{display:block; font-size:20px;}
+    .stat span{font-size:12px; color:var(--muted);}
+    .hero-card{
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: var(--shadow);
+      overflow:hidden; position:relative;
+      min-height: 420px;
+    }
+    .hero-card .img{
+      position:absolute; inset:0;
+      width:100%; height:100%; object-fit:cover;
+      filter: saturate(1.05) contrast(1.03);
+      transform: scale(1.02);
+    }
+    .hero-card::after{
+      content:""; position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(7,10,18,.05), rgba(7,10,18,.78));
+    }
+    .hero-card-inner{position:relative; padding:16px;}
+    .badge{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:8px 12px; border-radius:999px;
+      background: rgba(0,0,0,.35);
+      border:1px solid rgba(255,255,255,.16);
+      font-size:12px; color: #EAF0FF;
+    }
+    .mini{
+      margin-top:12px;
+      padding:12px;
+      border-radius: 16px;
+      background: rgba(7,10,18,.55);
+      border:1px solid rgba(255,255,255,.10);
+      display:flex; gap:10px; align-items:flex-start;
+    }
+    .icon{
+      width:38px;height:38px;border-radius:14px;
+      display:grid; place-items:center;
+      background: rgba(59,130,246,.18);
+      border:1px solid rgba(255,255,255,.12);
+    }
+    .mini h4{margin:0 0 4px; font-size:14px;}
+    .mini p{margin:0; color:var(--muted); font-size:12px;}
+
+    /* SECTIONS */
+    section{padding: 26px 0;}
+    .section-title{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:14px;
+      margin-bottom:14px;
+    }
+    .section-title h2{margin:0; font-size:22px;}
+    .section-title p{margin:0; color:var(--muted); font-size:13px; max-width:70ch;}
+
+    .card{
+      border-radius: var(--r);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      box-shadow: 0 14px 40px rgba(0,0,0,.24);
+      overflow:hidden;
+    }
+    .card-pad{padding:16px;}
+    .card h3{margin:0 0 8px; font-size:16px;}
+    .card p{margin:0; color:var(--muted); font-size:13px;}
+    .tagrow{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px;}
+    .tag{
+      font-size:12px; color:var(--muted);
+      padding:7px 10px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius: 999px;
+    }
+    .media{
+      aspect-ratio: 16/9;
+      background: rgba(255,255,255,.06);
+      border-bottom:1px solid rgba(255,255,255,.10);
+    }
+    .media img{width:100%; height:100%; object-fit:cover;}
+    .list{margin:10px 0 0; padding-left:18px; color:var(--muted); font-size:13px;}
+    .list li{margin:7px 0}
+
+    .feature{
+      display:grid; grid-template-columns: .9fr 1.1fr; gap:14px;
+      align-items:stretch;
+    }
+    .feature .media{
+      aspect-ratio: 4/3;
+      border-radius: var(--r);
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .feature .text{
+      border-radius: var(--r);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      padding:16px;
+      box-shadow: 0 14px 40px rgba(0,0,0,.24);
+    }
+
+    .banner{
+      margin-top:14px;
+      border-radius: 22px;
+      padding:18px;
+      border:1px solid rgba(255,255,255,.12);
+      background:
+        radial-gradient(900px 220px at 20% 0%, rgba(59,130,246,.28), transparent 55%),
+        radial-gradient(900px 220px at 80% 0%, rgba(34,197,94,.22), transparent 55%),
+        rgba(255,255,255,.04);
+      box-shadow: var(--shadow);
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      flex-wrap:wrap;
+    }
+    .banner b{font-size:16px}
+    .banner span{display:block; color:var(--muted); font-size:13px; margin-top:4px}
+
+    /* CONTACT */
+    .contact-grid{display:grid; grid-template-columns: 1fr 1fr; gap:14px;}
+    .input{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+      outline:none;
+    }
+    .input:focus{border-color: rgba(250,204,21,.35)}
+    textarea.input{resize:vertical; min-height:120px}
+
+    /* FOOTER */
+    footer{
+      padding:24px 0 38px;
+      border-top:1px solid rgba(255,255,255,.10);
+      color:var(--muted);
+      margin-top:16px;
+    }
+    .footer-grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:14px;}
+
+    /* FLOATING BUTTONS */
+    .float{
+      position:fixed; right:16px; bottom:16px; z-index:70;
+      display:flex; flex-direction:column; gap:10px;
+    }
+    .fab{
+      width:54px; height:54px; border-radius:18px;
+      display:grid; place-items:center;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(7,10,18,.70);
+      box-shadow: var(--shadow);
+    }
+    .fab:hover{background: rgba(255,255,255,.08);}
+    .fab.whatsapp{border:none;background: rgba(34,197,94,.22);}
+    .fab.call{border:none;background: rgba(59,130,246,.22);}
+
+    /* Make smartbilling cards equal height */
+    #smartbilling .card { height: 100%; }
+
+    /* RESPONSIVE */
+    @media (max-width: 980px){
+      .hero{grid-template-columns: 1fr;}
+      .stats{grid-template-columns: repeat(3, 1fr);}
+      .menu{display:none;}
+      .feature{grid-template-columns: 1fr;}
+      .contact-grid{grid-template-columns: 1fr;}
+      .footer-grid{grid-template-columns: 1fr;}
+    }
+    @media (max-width: 640px){
+      .stats{grid-template-columns: 1fr;}
+      .grid-3{grid-template-columns: 1fr;}
+      .grid-2{grid-template-columns: 1fr;}
+      .btn{width:100%;}
+      .hero-actions{gap:10px;}
+      .nav-inner{flex-wrap:wrap;}
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+<div class="nav">
+  <div class="container nav-inner">
+
+    <!-- LEFT -->
+    <div class="nav-left">
+      <div class="brand">
+        <div class="logo"><span>KR</span></div>
+        <div>
+          <div style="font-weight:700; line-height:1;">KR Tech</div>
+          <div class="brand-sub">Automation solutions • IoT • AI Computer Vision</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CENTER -->
+    <div class="nav-center">
+      <div class="menu" id="topMenu">
+        <a href="#services">Services</a>
+        <a href="#pcb">PCB</a>
+        <a href="#industries">Industries</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#smartbilling">Smart Billing</a>
+       
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="nav-right">
+      <a class="btn"
+         href="https://wa.me/919655078917?text=Hi%20KR%20Tech%2C%20I%20need%20automation%20support."
+         target="_blank" rel="noopener">WhatsApp ↗</a>
+
+      
+    </div>
+
+  </div>
+</div>
+
+  <!-- HERO -->
+  <header>
+    <div class="container hero">
+      <div>
+        <div class="pill">
+          <span style="width:10px;height:10px;border-radius:99px;background:var(--accent);display:inline-block;"></span>
+          Since 2013 • Gobichettipalayam, Tamil Nadu
+        </div>
+
+        <h1>Smart Automation<br/>with <span style="color:var(--accent);">IoT</span> & <span style="color:var(--brand2);">AI Vision</span></h1>
+
+        <p class="lead">
+          KR Tech builds customized <b>Electrical & Electronics Automation</b>, wireless panels, remote monitoring,
+          and <b>AI-based computer vision systems</b> for farms and industries — improving speed, accuracy, and productivity.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="tel:+919655078917">Call Now</a>
+          <a class="btn" href="https://wa.me/919655078917?text=Hi%20KR%20Tech%2C%20I%20need%20automation%20support." target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn" href="#solutions">See Solutions</a>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><b>10+ Years</b><span>Automation experience</span></div>
+          <div class="stat"><b>IoT + AI</b><span>Smart monitoring & vision</span></div>
+          <div class="stat"><b>Custom Builds</b><span>As per customer requirement</span></div>
+        </div>
+      </div>
+
+      <!-- HERO IMAGE -->
+      <div class="hero-card">
+        <img class="img" src="agricultural-robots-work-smart-farms-featured.jpg" alt="Smart Agriculture Automation - KR Tech" />
+        <div class="hero-card-inner">
+          <div class="badge">🌱 Smart Farming • 🤖 Robotics • 📷 AI Vision</div>
+
+          <div class="mini">
+            <div class="icon">📷</div>
+            <div>
+              <h4>AI Computer Vision Automation</h4>
+              <p>Counting, inspection, quality check, ANPR/ALPR, variety detection, reporting & billing integration.</p>
+            </div>
+          </div>
+
+          <div class="mini">
+            <div class="icon" style="background:rgba(34,197,94,.18)">📡</div>
+            <div>
+              <h4>IoT Remote Monitoring & Alerts</h4>
+              <p>Dashboards, sensors, SSR/relay control, call/WhatsApp alerts, logging and analytics.</p>
+            </div>
+          </div>
+
+          <div class="mini">
+            <div class="icon" style="background:rgba(250,204,21,.14)">🧩</div>
+            <div>
+              <h4>Embedded & Custom PCB Solutions</h4>
+              <p>Replace bulky wiring/PLC logic with compact boards — easy service and scalable designs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2>About KR Tech</h2>
+          <p>We develop customer-specific automation systems for agriculture, farms, all types of industries, logistics and food industries.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="media">
+          <img src="1323.png" alt="Smart Factory Automation - KR Tech" />
+        </div>
+        <div class="text">
+          <div class="pill">Electrical • Electronics • IoT • AI Computer Vision</div>
+          <h3 style="margin:12px 0 8px;">Customized Automation Company (Since 2013)</h3>
+          <p class="muted">
+            KR Tech is a customized Electrical, Electronics, IoT and AI-based automation company, located at
+            Gobichettipalayam, Erode. We design and deploy reliable systems that reduce manpower, minimize errors,
+            and improve productivity — from concept to commissioning.
+          </p>
+          <div class="tagrow">
+            <span class="tag">Wireless Panels</span>
+            <span class="tag">Remote Device Control</span>
+            <span class="tag">AI Vision Solutions</span>
+            <span class="tag">Custom PCB / Embedded</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="banner">
+        <div>
+          <b>We develop your ideas into real products & automation systems.</b>
+          <span>Concept → Prototype → Production → Installation → Support</span>
+        </div>
+        <a class="btn primary" href="#contact">Talk to KR Tech →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2>Services</h2>
+          <p>End-to-end build: automation panels, embedded controllers, IoT monitoring and AI vision integration.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="media">
+            <img src="remote-monitoring-of-servers-com-1.webp" alt="Remote Monitoring - KR Tech" />
+          </div>
+          <div class="card-pad">
+            <h3>IoT Monitoring & Alerts</h3>
+            <p>Real-time monitoring, dashboards, logs and call/WhatsApp alerts for critical systems.</p>
+            <div class="tagrow">
+              <span class="tag">Sensors</span><span class="tag">Cloud/Local</span><span class="tag">Alerts</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="media">
+            <img src="Smart-Factory-Ecosystem-Diagram.webp" alt="Smart Factory Ecosystem - KR Tech" />
+          </div>
+          <div class="card-pad">
+            <h3>Industrial Automation & Panels</h3>
+            <p>Customized control panels, wiring reduction, SSR/relay logic, interlocks, safety-ready designs.</p>
+            <div class="tagrow">
+              <span class="tag">Panels</span><span class="tag">Wireless</span><span class="tag">Industrial</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="media">
+            <img src="image1-4.png" alt="Food Industry Automation - KR Tech" />
+          </div>
+          <div class="card-pad">
+            <h3>AI Computer Vision</h3>
+            <p>Counting, inspection, variety detection, quality check, reporting and billing integration.</p>
+            <div class="tagrow">
+              <span class="tag">Counting</span><span class="tag">Inspection</span><span class="tag">Billing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PCB SECTION -->
+  <section id="pcb">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2>PCB Design & Manufacturing</h2>
+          <p>One-step solution from schematic to PCB — designing, manufacturing, and reverse engineering.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="media">
+          <img src="Embedded-System-Avench.jpg" alt="PCB Design for Volume Manufacturing - KR Tech" />
+        </div>
+
+        <div class="text">
+          <div class="pill">🧩 Schematic → PCB Layout → Manufacturing</div>
+          <h3 style="margin:12px 0 8px;">One Step Solution: From Schematic to PCB</h3>
+          <p class="muted">
+            We provide complete PCB services — <b>schematic design</b>, <b>PCB layout</b>, <b>manufacturing</b>, and
+            <b>testing support</b>. We also do <b>reverse engineering</b> for existing boards and create improved,
+            production-ready designs.
+          </p>
+
+          <div class="tagrow">
+            <span class="tag">PCB Schematic</span>
+            <span class="tag">PCB Layout</span>
+            <span class="tag">Prototype & Volume</span>
+            <span class="tag">Reverse Engineering</span>
+            <span class="tag">DFM Support</span>
+          </div>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+            <a class="btn primary" href="https://wa.me/919655078917?text=Hi%20KR%20Tech%2C%20I%20need%20PCB%20design%20and%20manufacturing%20support." target="_blank" rel="noopener">
+              WhatsApp for PCB Quote →
+            </a>
+            <a class="btn" href="mailto:krtechautomation@gmail.com?subject=PCB%20Design%20Enquiry%20-%20KR%20Tech">
+              Email PCB Requirement
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="margin-top:14px;">
+        <div class="card">
+          <div class="media">
+            <img src="pcb-designing-and-fabrication-500x500.webp" alt="Schematic to PCB Process - KR Tech" />
+          </div>
+          <div class="card-pad">
+            <h3>End-to-End PCB Workflow</h3>
+            <p>System requirement → schematic → PCB layout → signal/power integrity → production & testing support.</p>
+            <div class="tagrow">
+              <span class="tag">Schematic</span><span class="tag">Layout</span><span class="tag">Manufacturing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="media">
+            <img src="pcb-design-complexity.png" alt="PCB Reverse Engineering - KR Tech" />
+          </div>
+          <div class="card-pad">
+            <h3>Reverse Engineering</h3>
+            <p>We recreate PCB schematic/layout from existing boards, fix issues, and upgrade designs for reliability.</p>
+            <div class="tagrow">
+              <span class="tag">Board Analysis</span><span class="tag">Rebuild Schematic</span><span class="tag">Improve Design</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section id="industries">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2>Industries We Serve</h2>
+          <p>Agriculture, poultry/cattle farms, textiles, transport, logistics, food and machine industries.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="media"><img src="applsci-12-03396-g001.png" alt="IoT for Smart Agriculture - KR Tech" /></div>
+          <div class="card-pad">
+            <h3>🌱 Agriculture</h3>
+            <ul class="list">
+              <li>Automatic drip irrigation (moisture & time based)</li>
+              <li>AI coconut counting using computer vision</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="media"><img src="device-scaled.jpg" alt="Poultry Farm Automation - KR Tech" /></div>
+          <div class="card-pad">
+            <h3>🐔 Poultry Farms</h3>
+            <ul class="list">
+              <li>Temperature/humidity control + alerts</li>
+              <li>Automatic feeding & monitoring</li>
+              <li>AI chicken health / egg counting</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="media"><img src="1323.png" alt="Industrial Automation - KR Tech" /></div>
+          <div class="card-pad">
+            <h3>🏭 Machine / Robotic Industry</h3>
+            <ul class="list">
+              <li>PLC replacement using embedded PCB controllers</li>
+              <li>Less wiring, compact panels, easy maintenance</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-3" style="margin-top:14px;">
+        <div class="card">
+          <div class="media"><img src="image1-4.png" alt="Food Industry Automation - KR Tech" /></div>
+          <div class="card-pad">
+            <h3>🍞 Food Industry</h3>
+            <ul class="list">
+              <li>Automatic bag/pack counting</li>
+              <li>Variety detection using AI vision</li>
+              <li>Billing integration</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="media"><img src="New-Project-1.png" alt="Transport / Weighbridge Automation - KR Tech" /></div>
+          <div class="card-pad">
+            <h3>🚛 Transport / Logistics</h3>
+            <ul class="list">
+              <li>AI weighbridge automation</li>
+              <li>ANPR/ALPR + automatic billing</li>
+              <li>QR/UPI payment integration (optional)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="media"><img src="1_tUdFs2QVS7PYZXT2pQ681w.jpg" alt="Retail Smart Billing - KR Tech" /></div>
+          <div class="card-pad">
+            <h3>🛒 Retail / Supermarket</h3>
+            <ul class="list">
+              <li>AI-based automated billing & tracking</li>
+              <li>Avoid queue & waiting time</li>
+              <li>Optional payment / invoice integration</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SOLUTIONS / WORKFLOWS -->
+  <section id="solutions">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2>Solutions & Workflows</h2>
+          <p>Clear system workflows that customers understand — AI vision + automation + billing/controls.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="media"><img src="ANPR-working-1024x538.png" alt="ANPR / ALPR Workflow - KR Tech" /></div>
+          <div class="card-pad">
+            <h3>🚛 ANPR / ALPR + Gate / Billing Workflow</h3>
+            <p>Vehicle number recognition, authorization, gate control, logging and automation flow.</p>
+            <div class="tagrow">
+              <span class="tag">ANPR/ALPR</span><span class="tag">Gate Control</span><span class="tag">Automation</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="media"><img src="New-Project-1.png" alt="Weighbridge Automation System - KR Tech" /></div>
+          <div class="card-pad">
+            <h3>⚖️ Weighbridge Automation (AI + Sensors)</h3>
+            <p>Camera + sensors + display + barriers + records + billing integration for truck weighbridge.</p>
+            <div class="tagrow">
+              <span class="tag">Weighbridge</span><span class="tag">AI Vision</span><span class="tag">UPI/QR (Optional)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="margin-top:14px;">
+        <div class="card">
+          <div class="media"><img src="remote-monitoring-of-servers-com-1.webp" alt="Remote Monitoring Dashboard - KR Tech" /></div>
+          <div class="card-pad">
+            <h3>📡 Remote Monitoring & Alerts</h3>
+            <p>System health monitoring for farms, machines and panels—alerts via WhatsApp/Call.</p>
+            <div class="tagrow">
+              <span class="tag">Dashboards</span><span class="tag">Alerts</span><span class="tag">Logging</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="media"><img src="Smart-Factory-Ecosystem-Diagram.webp" alt="Smart Factory Ecosystem - KR Tech" /></div>
+          <div class="card-pad">
+            <h3>🧠 Smart Factory Ecosystem</h3>
+            <p>Automation + IoT + AI vision + analytics to improve accuracy and productivity.</p>
+            <div class="tagrow">
+              <span class="tag">Industrial IoT</span><span class="tag">AI</span><span class="tag">Automation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SMART BILLING -->
+  <section id="smartbilling">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2>Automated Supermarket Billing & Tracking</h2>
+          <p>AI-based item detection + cart/checkout tracking for fast billing — avoid queue and waiting time.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="media">
+          <img src="684d85682ade8bae25242d47_67ed51a6da432d260a80f823_67c81a4e220f7f1f485d075c_Supermarkets_Fig3.webp"
+               alt="AI Supermarket Billing - KR Tech" />
+        </div>
+
+        <div class="text">
+          <div class="pill">🛒 Smart Checkout • 📷 AI Vision • ⚡ Zero Queue</div>
+          <h3 style="margin:12px 0 8px;">Fast Billing System (Retail / Supermarket / Wholesale)</h3>
+          <p class="muted">
+            We build <b>automated billing and tracking systems</b> that detect products using camera-based AI,
+            maintain item counts, and generate bills instantly — helping customers <b>avoid queue and waiting time</b>.
+          </p>
+
+          <div class="tagrow">
+            <span class="tag">Product Detection</span>
+            <span class="tag">Auto Count</span>
+            <span class="tag">Tracking</span>
+            <span class="tag">Instant Invoice</span>
+            <span class="tag">Reports</span>
+          </div>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+            <a class="btn primary"
+               href="https://wa.me/919655078917?text=Hi%20KR%20Tech%2C%20I%20need%20Automated%20Billing%20%26%20Tracking%20solution%20for%20my%20store.%20Please%20share%20demo."
+               target="_blank" rel="noopener">
+              WhatsApp for Demo →
+            </a>
+            <a class="btn"
+               href="mailto:krtechautomation@gmail.com?subject=Automated%20Billing%20Enquiry%20-%20KR%20Tech">
+              Email Requirement
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-3" style="margin-top:14px;">
+
+        <div class="card">
+          <div class="media">
+            <img src="1_tUdFs2QVS7PYZXT2pQ681w.jpg" alt="Small Grocery Smart Billing - KR Tech" />
+          </div>
+          <div class="card-pad">
+            <h3>Small Grocery / Mini Mart</h3>
+            <p>Low-cost fast billing to reduce queue. Best for limited SKU & daily billing.</p>
+            <ul class="list">
+              <li>Camera detects packed items + auto count</li>
+              <li>Simple UI: item list + total amount</li>
+              <li>Invoice print / WhatsApp bill (optional)</li>
+              <li>Works offline/local network (optional)</li>
+            </ul>
+            <div class="tagrow">
+              <span class="tag">Budget Friendly</span><span class="tag">Easy Setup</span><span class="tag">Fast Billing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="media">
+            <img src="684d85682ade8bae25242d40_67ed51a6da432d260a80f7f5_67c81a2cdaafb86a7bda4d64_Supermarkets_Fig2.webp"
+                 alt="Supermarket Smart Checkout Workflow - KR Tech" />
+          </div>
+          <div class="card-pad">
+            <h3>Supermarket / Department Store</h3>
+            <p>High accuracy + faster checkout. Suitable for many items & busy counters.</p>
+            <ul class="list">
+              <li>Tracking avoids double-count & missed items</li>
+              <li>Multiple counter support (optional)</li>
+              <li>Staff + customer display screen</li>
+              <li>Daily reports, peak-time analytics</li>
+            </ul>
+            <div class="tagrow">
+              <span class="tag">High Accuracy</span><span class="tag">Multi Counter</span><span class="tag">Reports</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="media">
+            <img src="684d85682ade8bae25242d47_67ed51a6da432d260a80f823_67c81a4e220f7f1f485d075c_Supermarkets_Fig3.webp"
+                 alt="Wholesale Billing & Tracking - KR Tech" />
+          </div>
+          <div class="card-pad">
+            <h3>Wholesale / Distributor / Godown</h3>
+            <p>Bulk item counting + fast invoice generation for dispatch & loading areas.</p>
+            <ul class="list">
+              <li>Bulk counting (carton/bag/pack detection)</li>
+              <li>SKU-wise dispatch summary</li>
+              <li>Optional: QR invoice + scanning verification</li>
+              <li>Optional: ERP/Billing software integration</li>
+            </ul>
+            <div class="tagrow">
+              <span class="tag">Bulk Billing</span><span class="tag">Dispatch</span><span class="tag">Integration</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="margin-top:14px;">
+        <div class="card">
+          <div class="media">
+            <img src="1_tUdFs2QVS7PYZXT2pQ681w.jpg" alt="Item Detection - KR Tech" />
+          </div>
+          <div class="card-pad">
+            <h3>How It Works</h3>
+            <ul class="list">
+              <li>Camera reads items in cart / checkout zone</li>
+              <li>AI model identifies SKU/class + quantity</li>
+              <li>Tracking prevents duplicate counts</li>
+              <li>Bill auto-generated + optional payment</li>
+            </ul>
+            <div class="tagrow">
+              <span class="tag">Detection</span><span class="tag">Tracking</span><span class="tag">Auto Billing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="media">
+            <img src="684d85682ade8bae25242d40_67ed51a6da432d260a80f7f5_67c81a2cdaafb86a7bda4d64_Supermarkets_Fig2.webp"
+                 alt="Smart Billing System Workflow - KR Tech" />
+          </div>
+          <div class="card-pad">
+            <h3>Optional Add-Ons</h3>
+            <ul class="list">
+              <li>Barcode + AI hybrid (best accuracy)</li>
+              <li>Weighing scale integration (loose items)</li>
+              <li>UPI QR payment + invoice print</li>
+              <li>Theft / mismatch alerts (advanced)</li>
+            </ul>
+            <div class="tagrow">
+              <span class="tag">Barcode Hybrid</span><span class="tag">Weigh Scale</span><span class="tag">UPI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="banner" style="margin-top:14px;">
+        <div>
+          <b>Want a demo with your product list?</b>
+          <span>We can train/customize the model for your store items and integrate with billing software if required.</span>
+        </div>
+        <a class="btn primary" href="#contact">Get Proposal →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2>Project Gallery</h2>
+          <p>Visual references of KR Tech focus areas. (Later, you can replace with your real project photos.)</p>
+        </div>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="media"><img src="agricultural-robots-work-smart-farms-featured.jpg" alt="Smart Agriculture" /></div>
+          <div class="card-pad"><h3>Smart Agriculture</h3><p>Precision automation & AI counting.</p></div>
+        </div>
+
+        <div class="card">
+          <div class="media"><img src="applsci-12-03396-g001.png" alt="IoT Agriculture" /></div>
+          <div class="card-pad"><h3>IoT for Agriculture</h3><p>Tracking, monitoring, analytics.</p></div>
+        </div>
+
+        <div class="card">
+          <div class="media"><img src="device-scaled.jpg" alt="Farm Automation" /></div>
+          <div class="card-pad"><h3>Farm Automation</h3><p>Sensors → control → alerts.</p></div>
+        </div>
+
+        <div class="card">
+          <div class="media"><img src="ANPR-working-1024x538.png" alt="ANPR Workflow" /></div>
+          <div class="card-pad"><h3>ANPR Workflow</h3><p>Gate + recognition + logging.</p></div>
+        </div>
+
+        <div class="card">
+          <div class="media"><img src="New-Project-1.png" alt="Weighbridge" /></div>
+          <div class="card-pad"><h3>Weighbridge System</h3><p>Integrated devices & automation.</p></div>
+        </div>
+
+        <div class="card">
+          <div class="media"><img src="image1-4.png" alt="Food Automation" /></div>
+          <div class="card-pad"><h3>Food Industry</h3><p>Automation + inspection + counting.</p></div>
+        </div>
+
+        <div class="card">
+          <div class="media"><img src="Embedded-System-Avench.jpg" alt="PCB" /></div>
+          <div class="card-pad"><h3>PCB Services</h3><p>Schematic → layout → manufacturing.</p></div>
+        </div>
+
+        <div class="card">
+          <div class="media"><img src="pcb-design-complexity.png" alt="Reverse Engineering" /></div>
+          <div class="card-pad"><h3>Reverse Engineering</h3><p>Board rebuild + design upgrade.</p></div>
+        </div>
+
+        <div class="card">
+          <div class="media"><img src="1_tUdFs2QVS7PYZXT2pQ681w.jpg" alt="Smart Billing" /></div>
+          <div class="card-pad"><h3>Smart Billing</h3><p>AI tracking to avoid queue.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2>Contact KR Tech</h2>
+          <p>Send your requirement. We will suggest the best automation solution and quotation.</p>
+        </div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="card">
+          <div class="card-pad">
+            <h3>KR Tech – Automation Division</h3>
+            <p class="muted">
+              #27, Santhan Kanthan Complex,<br/>
+              Opp. Jeeva Depot,<br/>
+              Gobichettipalayam – 638476,<br/>
+              Erode, Tamil Nadu, India
+            </p>
+
+            <div class="tagrow" style="margin-top:14px">
+              <span class="tag">📞 +91 96550 78917</span>
+              <span class="tag">📧 krtechautomation@gmail.com</span>
+              <a class="tag" href="https://maps.app.goo.gl/6z7uTkectpx13k889" target="_blank" rel="noopener">📍 Open in Google Maps ↗</a>
+            </div>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+              <a class="btn primary" href="tel:+919655078917">Call Now</a>
+              <a class="btn" href="https://wa.me/919655078917?text=Hi%20KR%20Tech%2C%20I%20need%20automation%20support." target="_blank" rel="noopener">WhatsApp</a>
+              <a class="btn" href="mailto:krtechautomation@gmail.com?subject=Enquiry%20-%20KR%20Tech">Email</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-pad">
+            <h3>Quick Enquiry</h3>
+            <p class="small">This opens your Email app (no backend needed).</p>
+
+            <form onsubmit="return openMail(event)" style="margin-top:12px;">
+              <div class="grid" style="gap:10px;">
+                <input class="input" id="name" required placeholder="Your Name">
+                <input class="input" id="phone" required placeholder="Phone / WhatsApp">
+                <input class="input" id="city" placeholder="City / Location">
+                <textarea class="input" id="msg" required placeholder="Requirement (example: bag counting / poultry alerts / drip irrigation / panel automation / PCB / smart billing...)"></textarea>
+                <button class="btn primary" type="submit">Send Enquiry →</button>
+              </div>
+            </form>
+
+            <script>
+              function openMail(e){
+                e.preventDefault();
+                const name = document.getElementById('name').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                const city = document.getElementById('city').value.trim();
+                const msg = document.getElementById('msg').value.trim();
+
+                const to = "krtechautomation@gmail.com";
+                const subject = encodeURIComponent("Enquiry - KR Tech Website");
+                const body = encodeURIComponent(
+                  `Name: ${name}\nPhone: ${phone}\nCity: ${city}\n\nRequirement:\n${msg}\n\nSent from KR Tech Website`
+                );
+                window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+                return false;
+              }
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:8px">
+          <div class="logo"><span>KR</span></div>
+          <div>
+            <div style="font-weight:700">KR Tech</div>
+            <div class="small">Electrical • Electronics • IoT • AI Computer Vision Automation</div>
+          </div>
+        </div>
+        <div class="small">© <span id="year"></span> KR Tech. All Rights Reserved.</div>
+      </div>
+
+      <div>
+        <div class="small" style="margin-bottom:8px"><b style="color:var(--text)">Quick Links</b></div>
+        <div class="small" style="display:flex; flex-wrap:wrap; gap:10px">
+          <a href="#services" class="tag">Services</a>
+          <a href="#pcb" class="tag">PCB</a>
+          <a href="#industries" class="tag">Industries</a>
+          <a href="#solutions" class="tag">Solutions</a>
+          <a href="#smartbilling" class="tag">Smart Billing</a>
+          <a href="#gallery" class="tag">Gallery</a>
+          <a href="#contact" class="tag">Contact</a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+
+  <!-- Floating actions -->
+  <div class="float" aria-label="Quick actions">
+    <a class="fab whatsapp"
+   href="https://wa.me/919655078917?text=Hi%20KR%20Tech%2C%20I%20need%20automation%20support."
+   target="_blank" rel="noopener" title="WhatsApp" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+    <path fill="white" d="M19.11 17.53c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.66.15-.19.3-.76.97-.93 1.17-.17.2-.34.23-.64.08-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.5-1.77-1.68-2.06-.17-.3-.02-.46.13-.61.14-.14.3-.34.45-.51.15-.17.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.66-1.6-.9-2.2-.24-.58-.48-.5-.66-.5h-.57c-.2 0-.53.08-.8.38-.27.3-1.04 1.02-1.04 2.5 0 1.48 1.06 2.9 1.2 3.1.15.2 2.09 3.19 5.06 4.47.71.31 1.26.49 1.69.63.71.23 1.35.2 1.86.12.57-.08 1.77-.72 2.02-1.41.25-.69.25-1.28.17-1.41-.08-.13-.27-.2-.57-.35z"/>
+    <path fill="white" d="M26.67 5.33C23.83 2.49 20.06.93 16.06.93 7.85.93 1.2 7.58 1.2 15.79c0 2.62.68 5.18 1.98 7.44L1 31l7.98-2.09c2.2 1.2 4.67 1.83 7.18 1.83h.01c8.21 0 14.86-6.65 14.86-14.86 0-3.99-1.56-7.76-4.36-10.55zm-10.6 22.9h-.01c-2.22 0-4.4-.6-6.3-1.73l-.45-.27-4.73 1.24 1.26-4.61-.29-.47c-1.22-1.95-1.87-4.2-1.87-6.51 0-6.86 5.58-12.44 12.45-12.44 3.32 0 6.44 1.29 8.79 3.64 2.35 2.35 3.65 5.47 3.65 8.79 0 6.86-5.58 12.44-12.5 12.44z"/>
+  </svg>
+</a>
+    <a class="fab call" href="tel:+919655078917" title="Call KR Tech">
+      <span style="font-size:22px">📞</span>
+    </a>
+  </div>
+</body>
+</html>
+
+
