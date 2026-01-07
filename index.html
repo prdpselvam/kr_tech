@@ -27,9 +27,9 @@ SMART BILLING SECTION:
 - 684d85682ade8bae25242d40_67ed51a6da432d260a80f7f5_67c81a2cdaafb86a7bda4d64_Supermarkets_Fig2.webp
 - 1_tUdFs2QVS7PYZXT2pQ681w.jpg
 
-4) IMPORTANT (to avoid YouTube embed errors):
-   - Open website using a local server (http://localhost) or host it online.
-   - Do NOT open by double-click (file://) if YouTube shows errors.
+4) IMPORTANT (for YouTube embeds):
+   Open using local server (http://localhost) or host online.
+   Do NOT double-click open (file://) if you see embed errors.
 
 Your Contact:
 Phone/WhatsApp: +91 96550 78917
@@ -313,13 +313,17 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
     /* Make smartbilling cards equal height */
     #smartbilling .card { height: 100%; }
 
-    /* VIDEO EMBED (overlay + click-to-load) */
+    /* VIDEO THUMB (small) */
     .video-wrap{
       border-radius: var(--r);
       overflow:hidden;
       border:1px solid rgba(255,255,255,.10);
       background: rgba(255,255,255,.05);
       box-shadow: 0 14px 40px rgba(0,0,0,.24);
+    }
+    .video-small{
+      width: min(520px, 100%);
+      margin: 0 auto;
     }
     .video-thumb{
       position:relative;
@@ -344,7 +348,7 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
     }
     .play-btn{
       position:absolute;
-      width:88px; height:88px;
+      width:84px; height:84px;
       border-radius:999px;
       border:2px solid rgba(255,255,255,.35);
       background: rgba(0,0,0,.35);
@@ -355,7 +359,45 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
     }
     .video-thumb:hover .play-btn{transform:scale(1.05); background: rgba(0,0,0,.45);}
     .play-btn svg{width:34px;height:34px; margin-left:4px; fill:#fff;}
-    .video-iframe{
+
+    /* VIDEO MODAL (actual size) */
+    .video-modal{
+      position:fixed;
+      inset:0;
+      background: rgba(0,0,0,.75);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:9999;
+      padding: 18px;
+    }
+    .video-modal.open{display:flex;}
+    .video-modal-inner{
+      width: min(1100px, 96vw);
+      background: rgba(12,16,32,.92);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius: 18px;
+      overflow:hidden;
+      box-shadow: var(--shadow);
+    }
+    .video-modal-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:10px 12px;
+      border-bottom:1px solid rgba(255,255,255,.10);
+    }
+    .video-close{
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      border-radius: 12px;
+      padding: 8px 12px;
+      cursor:pointer;
+      font-weight:600;
+    }
+    .video-modal-frame{
       width:100%;
       aspect-ratio:16/9;
       border:0;
@@ -378,48 +420,49 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
       .btn{width:100%;}
       .hero-actions{gap:10px;}
       .nav-inner{flex-wrap:wrap;}
+      .video-small{width:100%;}
     }
   </style>
 </head>
 
 <body>
   <!-- NAV -->
-<div class="nav">
-  <div class="container nav-inner">
+  <div class="nav">
+    <div class="container nav-inner">
 
-    <!-- LEFT -->
-    <div class="nav-left">
-      <div class="brand">
-        <div class="logo"><span>KR</span></div>
-        <div>
-          <div style="font-weight:700; line-height:1;">KR Tech</div>
-          <div class="brand-sub">Automation solutions • IoT • AI Computer Vision</div>
+      <!-- LEFT -->
+      <div class="nav-left">
+        <div class="brand">
+          <div class="logo"><span>KR</span></div>
+          <div>
+            <div style="font-weight:700; line-height:1;">KR Tech</div>
+            <div class="brand-sub">Automation solutions • IoT • AI Computer Vision</div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- CENTER -->
-    <div class="nav-center">
-      <div class="menu" id="topMenu">
-        <a href="#services">Services</a>
-        <a href="#pcb">PCB</a>
-        <a href="#industries">Industries</a>
-        <a href="#solutions">Solutions</a>
-        <a href="#video">Video</a>
-        <a href="#smartbilling">Smart Billing</a>
-        <a href="#contact">Contact</a>
+      <!-- CENTER -->
+      <div class="nav-center">
+        <div class="menu" id="topMenu">
+          <a href="#services">Services</a>
+          <a href="#pcb">PCB</a>
+          <a href="#industries">Industries</a>
+          <a href="#solutions">Solutions</a>
+          <a href="#video">Video</a>
+          <a href="#smartbilling">Smart Billing</a>
+          <a href="#contact">Contact</a>
+        </div>
       </div>
-    </div>
 
-    <!-- RIGHT -->
-    <div class="nav-right">
-      <a class="btn"
-         href="https://wa.me/919655078917?text=Hi%20KR%20Tech%2C%20I%20need%20automation%20support."
-         target="_blank" rel="noopener">WhatsApp ↗</a>
-    </div>
+      <!-- RIGHT -->
+      <div class="nav-right">
+        <a class="btn"
+           href="https://wa.me/919655078917?text=Hi%20KR%20Tech%2C%20I%20need%20automation%20support."
+           target="_blank" rel="noopener">WhatsApp ↗</a>
+      </div>
 
+    </div>
   </div>
-</div>
 
   <!-- HERO -->
   <header>
@@ -485,68 +528,90 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
     </div>
   </header>
 
-  <!-- VIDEO -->
+  <!-- VIDEO (SMALL PREVIEW -> MODAL FULL SIZE) -->
   <section id="video">
     <div class="container">
       <div class="section-title">
         <div>
           <h2>Project Demo Video</h2>
-          <p>Real installations & demonstrations: Industrial automation, IoT monitoring, and AI computer vision solutions by KR Tech.</p>
+          <p>Click the small preview to watch in full size.</p>
         </div>
       </div>
 
-      <div class="video-wrap">
-        <!-- Thumbnail + Play Overlay -->
+      <!-- SMALL PREVIEW -->
+      <div class="video-wrap video-small">
         <div class="video-thumb" id="ytThumb" role="button" aria-label="Play demo video">
-          <img src="https://i.ytimg.com/vi/9-j3eA0oe2I/hqdefault.jpg" alt="KR Tech Automation Demo Video Thumbnail">
+          <img src="https://i.ytimg.com/vi/14iid5CQS7Y/hqdefault.jpg" alt="KR Tech Demo Video Thumbnail">
           <div class="play-btn" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
           </div>
         </div>
 
-        <!-- Player loads only after click -->
-        <div id="ytPlayer"></div>
-
         <div class="card-pad">
           <h3>KR Tech | Automation, IoT & AI Vision – Project Demo</h3>
-          <p>
-            Watch KR Tech’s real-world automation solutions: IoT remote monitoring, AI computer vision counting/inspection,
-            ANPR/ALPR workflows, and customized industrial panels.
-          </p>
+          <p>Industrial automation, IoT monitoring dashboards, and AI computer vision workflows.</p>
           <div class="tagrow">
             <span class="tag">Automation</span>
-            <span class="tag">IoT Monitoring</span>
+            <span class="tag">IoT</span>
             <span class="tag">AI Vision</span>
-            <span class="tag">ANPR/ALPR</span>
-            <a class="tag" href="https://www.youtube.com/watch?v=9-j3eA0oe2I" target="_blank" rel="noopener">▶ Watch on YouTube ↗</a>
+            <a class="tag" href="https://www.youtube.com/watch?v=14iid5CQS7Y" target="_blank" rel="noopener">Watch on YouTube ↗</a>
           </div>
         </div>
       </div>
 
-      <!-- Video SEO (Google) -->
+      <!-- FULL SIZE MODAL -->
+      <div class="video-modal" id="videoModal" aria-hidden="true">
+        <div class="video-modal-inner" role="dialog" aria-label="Video player">
+          <div class="video-modal-top">
+            <div class="small" style="color:var(--muted)">KR Tech Demo Video</div>
+            <button class="video-close" id="videoClose" type="button">Close ✕</button>
+          </div>
+          <div id="modalPlayer"></div>
+        </div>
+      </div>
+
+      <!-- Video SEO -->
       <script type="application/ld+json">
       {
         "@context":"https://schema.org",
         "@type":"VideoObject",
         "name":"KR Tech | Automation, IoT & AI Vision – Project Demo",
-        "description":"Real installations and demos by KR Tech: industrial automation, IoT monitoring, AI computer vision counting/inspection, ANPR/ALPR workflows, and customized panels.",
-        "thumbnailUrl":["https://i.ytimg.com/vi/9-j3eA0oe2I/hqdefault.jpg"],
-        "embedUrl":"https://www.youtube.com/embed/9-j3eA0oe2I",
+        "description":"KR Tech demo video covering industrial automation, IoT monitoring dashboards and AI computer vision workflows.",
+        "thumbnailUrl":["https://i.ytimg.com/vi/14iid5CQS7Y/hqdefault.jpg"],
+        "embedUrl":"https://www.youtube.com/embed/14iid5CQS7Y",
         "uploadDate":"2026-01-01"
       }
       </script>
 
       <script>
-        // Click-to-load YouTube (fast + mobile friendly)
-        document.getElementById('ytThumb').addEventListener('click', function(){
-          const src = "https://www.youtube.com/embed/9-j3eA0oe2I?rel=0&modestbranding=1";
-          document.getElementById('ytPlayer').innerHTML =
-            '<iframe class="video-iframe" ' +
-            'src="'+src+'" ' +
-            'title="KR Tech Project Demo Video" ' +
+        const VIDEO_ID = "14iid5CQS7Y";
+        const modal = document.getElementById("videoModal");
+        const modalPlayer = document.getElementById("modalPlayer");
+        const thumb = document.getElementById("ytThumb");
+        const closeBtn = document.getElementById("videoClose");
+
+        function openVideo(){
+          const src = "https://www.youtube.com/embed/" + VIDEO_ID + "?autoplay=1&rel=0&modestbranding=1";
+          modalPlayer.innerHTML =
+            '<iframe class="video-modal-frame" ' +
+            'src="'+src+'" title="KR Tech Video" ' +
             'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ' +
             'allowfullscreen></iframe>';
-          this.style.display = "none";
+          modal.classList.add("open");
+          modal.setAttribute("aria-hidden","false");
+        }
+
+        function closeVideo(){
+          modal.classList.remove("open");
+          modal.setAttribute("aria-hidden","true");
+          modalPlayer.innerHTML = ""; // stop video
+        }
+
+        thumb.addEventListener("click", openVideo);
+        closeBtn.addEventListener("click", closeVideo);
+        modal.addEventListener("click", (e) => { if(e.target === modal) closeVideo(); });
+        document.addEventListener("keydown", (e) => {
+          if(e.key === "Escape" && modal.classList.contains("open")) closeVideo();
         });
       </script>
 
@@ -1206,4 +1271,3 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
   </div>
 </body>
 </html>
-
