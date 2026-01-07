@@ -1,5 +1,5 @@
 <!--
-KR Tech- Full Single Page Website (WITH all your images + PCB + Smart Billing)
+KR Tech - Full Single Page Website (WITH all your images + PCB + Smart Billing)
 ================================================================================
 HOW TO USE:
 1) Create a folder: krtech-site/
@@ -40,14 +40,17 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>KR Tech| Automation • IoT • AI Computer Vision</title>
-  <meta name="description" content="KR Techbuilds customized Electrical, Electronics, IoT and AI Computer Vision automation solutions since 2013 in Gobichettipalayam, Tamil Nadu." />
+  <title>KR Tech | Automation • IoT • AI Computer Vision</title>
+  <meta name="description" content="KR Tech builds customized Electrical, Electronics, IoT and AI Computer Vision automation solutions since 2013 in Gobichettipalayam, Tamil Nadu." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
+  
+  <link rel="preconnect" href="https://www.youtube-nocookie.com">
+  <link rel="preconnect" href="https://i.ytimg.com">
+<style>
     :root{
       --bg:#070A12;
       --panel:#0C1020;
@@ -229,6 +232,54 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
       border-bottom:1px solid rgba(255,255,255,.10);
     }
     .media img{width:100%; height:100%; object-fit:cover;}
+
+    /* VIDEO (YouTube) */
+    .video-card{overflow:hidden}
+    .yt-wrap{
+      position:relative;
+      width:100%;
+      aspect-ratio:16/9;
+      border-bottom:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.06);
+    }
+    .yt-thumb{
+      position:absolute; inset:0;
+      width:100%; height:100%;
+      object-fit:cover;
+      filter: saturate(1.05) contrast(1.03);
+    }
+    .yt-overlay{
+      position:absolute; inset:0;
+      display:grid; place-items:center;
+      background: linear-gradient(180deg, rgba(7,10,18,.12), rgba(7,10,18,.55));
+    }
+    .yt-play{
+      width:84px; height:84px;
+      border-radius:26px;
+      border:1px solid rgba(255,255,255,.22);
+      background: rgba(7,10,18,.55);
+      box-shadow: 0 18px 50px rgba(0,0,0,.45);
+      display:grid; place-items:center;
+      cursor:pointer;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+    }
+    .yt-play:hover{transform: translateY(-1px); background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.30);}
+    .yt-play svg{width:34px;height:34px}
+    .yt-hint{
+      position:absolute; left:14px; bottom:12px;
+      font-size:12px; color: rgba(234,240,255,.9);
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(0,0,0,.28);
+      backdrop-filter: blur(10px);
+    }
+    .yt-iframe{
+      position:absolute; inset:0;
+      width:100%; height:100%;
+      border:0;
+    }
+
     .list{margin:10px 0 0; padding-left:18px; color:var(--muted); font-size:13px;}
     .list li{margin:7px 0}
 
@@ -338,7 +389,7 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
       <div class="brand">
         <div class="logo"><span>KR</span></div>
         <div>
-          <div style="font-weight:700; line-height:1;">KR_Tech</div>
+          <div style="font-weight:700; line-height:1;">KR Tech</div>
           <div class="brand-sub">Automation solutions • IoT • AI Computer Vision</div>
         </div>
       </div>
@@ -352,6 +403,7 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
         <a href="#industries">Industries</a>
         <a href="#solutions">Solutions</a>
         <a href="#smartbilling">Smart Billing</a>
+        <a href="#video">Video</a>
        
         <a href="#contact">Contact</a>
       </div>
@@ -381,7 +433,7 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
         <h1>Smart Automation<br/>with <span style="color:var(--accent);">IoT</span> & <span style="color:var(--brand2);">AI Vision</span></h1>
 
         <p class="lead">
-          KR Techbuilds customized <b>Electrical & Electronics Automation</b>, wireless panels, remote monitoring,
+          KR Tech builds customized <b>Electrical & Electronics Automation</b>, wireless panels, remote monitoring,
           and <b>AI-based computer vision systems</b> for farms and industries — improving speed, accuracy, and productivity.
         </p>
 
@@ -400,7 +452,7 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
 
       <!-- HERO IMAGE -->
       <div class="hero-card">
-        <img class="img" src="agricultural-robots-work-smart-farms-featured.jpg" alt="Smart Agriculture Automation - KR_Tech" />
+        <img class="img" src="agricultural-robots-work-smart-farms-featured.jpg" alt="Smart Agriculture Automation - KR Tech" />
         <div class="hero-card-inner">
           <div class="badge">🌱 Smart Farming • 🤖 Robotics • 📷 AI Vision</div>
 
@@ -433,25 +485,67 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
     </div>
   </header>
 
+
+  <!-- VIDEO -->
+  <section id="video">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2>Project Demo Video</h2>
+          <p>Real installations & demonstrations: Industrial automation, IoT monitoring, and AI computer vision solutions by KR Tech.</p>
+        </div>
+      </div>
+
+      <div class="card video-card">
+        <div class="yt-wrap" data-video="14iid5CQS7Y">
+          <img class="yt-thumb" src="https://i.ytimg.com/vi/14iid5CQS7Y/hqdefault.jpg" alt="KR Tech | Automation, IoT & AI Vision – Project Demo video thumbnail" loading="lazy" />
+          <div class="yt-overlay">
+            <button class="yt-play" type="button" aria-label="Play KR Tech demo video" onclick="loadYT(this)">
+              <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+                <path fill="white" d="M25 20v24l22-12-22-12z"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="yt-hint">▶ Click to play (loads YouTube)</div>
+        </div>
+
+        <div class="card-pad">
+          <h3>KR Tech | Automation, IoT &amp; AI Vision – Project Demo</h3>
+          <p>
+            Watch KR Tech’s real-world automation solutions: IoT remote monitoring, AI computer vision counting &amp; inspection,
+            ANPR/ALPR workflows, and customized industrial panels.
+          </p>
+          <div class="tagrow">
+            <span class="tag">Automation</span>
+            <span class="tag">IoT Monitoring</span>
+            <span class="tag">AI Vision</span>
+            <span class="tag">ANPR/ALPR</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
   <!-- ABOUT -->
   <section id="about">
     <div class="container">
       <div class="section-title">
         <div>
-          <h2>About KR_Tech</h2>
+          <h2>About KR Tech</h2>
           <p>We develop customer-specific automation systems for agriculture, farms, all types of industries, logistics and food industries.</p>
         </div>
       </div>
 
       <div class="feature">
         <div class="media">
-          <img src="1323.png" alt="Smart Factory Automation - KR_Tech" />
+          <img src="1323.png" alt="Smart Factory Automation - KR Tech" />
         </div>
         <div class="text">
           <div class="pill">Electrical • Electronics • IoT • AI Computer Vision</div>
           <h3 style="margin:12px 0 8px;">Customized Automation Company (Since 2013)</h3>
           <p class="muted">
-            KR Techis a customized Electrical, Electronics, IoT and AI-based automation company, located at
+            KR Tech is a customized Electrical, Electronics, IoT and AI-based automation company, located at
             Gobichettipalayam, Erode. We design and deploy reliable systems that reduce manpower, minimize errors,
             and improve productivity — from concept to commissioning.
           </p>
@@ -469,7 +563,7 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
           <b>We develop your ideas into real products & automation systems.</b>
           <span>Concept → Prototype → Production → Installation → Support</span>
         </div>
-        <a class="btn primary" href="#contact">Talk to KR Tech→</a>
+        <a class="btn primary" href="#contact">Talk to KR Tech →</a>
       </div>
     </div>
   </section>
@@ -487,7 +581,7 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
       <div class="grid grid-3">
         <div class="card">
           <div class="media">
-            <img src="remote-monitoring-of-servers-com-1.webp" alt="Remote Monitoring - KR_Tech" />
+            <img src="remote-monitoring-of-servers-com-1.webp" alt="Remote Monitoring - KR Tech" />
           </div>
           <div class="card-pad">
             <h3>IoT Monitoring & Alerts</h3>
@@ -500,7 +594,7 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
 
         <div class="card">
           <div class="media">
-            <img src="Smart-Factory-Ecosystem-Diagram.webp" alt="Smart Factory Ecosystem - KR_Tech" />
+            <img src="Smart-Factory-Ecosystem-Diagram.webp" alt="Smart Factory Ecosystem - KR Tech" />
           </div>
           <div class="card-pad">
             <h3>Industrial Automation & Panels</h3>
@@ -513,7 +607,7 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
 
         <div class="card">
           <div class="media">
-            <img src="image1-4.png" alt="Food Industry Automation - KR_Tech" />
+            <img src="image1-4.png" alt="Food Industry Automation - KR Tech" />
           </div>
           <div class="card-pad">
             <h3>AI Computer Vision</h3>
@@ -539,7 +633,7 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
 
       <div class="feature">
         <div class="media">
-          <img src="Embedded-System-Avench.jpg" alt="PCB Design for Volume Manufacturing - KR_Tech" />
+          <img src="Embedded-System-Avench.jpg" alt="PCB Design for Volume Manufacturing - KR Tech" />
         </div>
 
         <div class="text">
@@ -573,7 +667,7 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
       <div class="grid grid-2" style="margin-top:14px;">
         <div class="card">
           <div class="media">
-            <img src="pcb-designing-and-fabrication-500x500.webp" alt="Schematic to PCB Process - KR_Tech" />
+            <img src="pcb-designing-and-fabrication-500x500.webp" alt="Schematic to PCB Process - KR Tech" />
           </div>
           <div class="card-pad">
             <h3>End-to-End PCB Workflow</h3>
@@ -586,7 +680,7 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
 
         <div class="card">
           <div class="media">
-            <img src="pcb-design-complexity.png" alt="PCB Reverse Engineering - KR_Tech" />
+            <img src="pcb-design-complexity.png" alt="PCB Reverse Engineering - KR Tech" />
           </div>
           <div class="card-pad">
             <h3>Reverse Engineering</h3>
@@ -612,7 +706,7 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
 
       <div class="grid grid-3">
         <div class="card">
-          <div class="media"><img src="applsci-12-03396-g001.png" alt="IoT for Smart Agriculture - KR_Tech" /></div>
+          <div class="media"><img src="applsci-12-03396-g001.png" alt="IoT for Smart Agriculture - KR Tech" /></div>
           <div class="card-pad">
             <h3>🌱 Agriculture</h3>
             <ul class="list">
@@ -623,7 +717,7 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
         </div>
 
         <div class="card">
-          <div class="media"><img src="device-scaled.jpg" alt="Poultry Farm Automation - KR_Tech" /></div>
+          <div class="media"><img src="device-scaled.jpg" alt="Poultry Farm Automation - KR Tech" /></div>
           <div class="card-pad">
             <h3>🐔 Poultry Farms</h3>
             <ul class="list">
@@ -635,7 +729,7 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
         </div>
 
         <div class="card">
-          <div class="media"><img src="1323.png" alt="Industrial Automation - KR_Tech" /></div>
+          <div class="media"><img src="1323.png" alt="Industrial Automation - KR Tech" /></div>
           <div class="card-pad">
             <h3>🏭 Machine / Robotic Industry</h3>
             <ul class="list">
@@ -648,7 +742,7 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
 
       <div class="grid grid-3" style="margin-top:14px;">
         <div class="card">
-          <div class="media"><img src="image1-4.png" alt="Food Industry Automation - KR_Tech" /></div>
+          <div class="media"><img src="image1-4.png" alt="Food Industry Automation - KR Tech" /></div>
           <div class="card-pad">
             <h3>🍞 Food Industry</h3>
             <ul class="list">
@@ -660,7 +754,7 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
         </div>
 
         <div class="card">
-          <div class="media"><img src="New-Project-1.png" alt="Transport / Weighbridge Automation - KR_Tech" /></div>
+          <div class="media"><img src="New-Project-1.png" alt="Transport / Weighbridge Automation - KR Tech" /></div>
           <div class="card-pad">
             <h3>🚛 Transport / Logistics</h3>
             <ul class="list">
@@ -672,7 +766,7 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
         </div>
 
         <div class="card">
-          <div class="media"><img src="1_tUdFs2QVS7PYZXT2pQ681w.jpg" alt="Retail Smart Billing - KR_Tech" /></div>
+          <div class="media"><img src="1_tUdFs2QVS7PYZXT2pQ681w.jpg" alt="Retail Smart Billing - KR Tech" /></div>
           <div class="card-pad">
             <h3>🛒 Retail / Supermarket</h3>
             <ul class="list">
@@ -699,7 +793,7 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
 
       <div class="grid grid-2">
         <div class="card">
-          <div class="media"><img src="ANPR-working-1024x538.png" alt="ANPR / ALPR Workflow - KR_Tech" /></div>
+          <div class="media"><img src="ANPR-working-1024x538.png" alt="ANPR / ALPR Workflow - KR Tech" /></div>
           <div class="card-pad">
             <h3>🚛 ANPR / ALPR + Gate / Billing Workflow</h3>
             <p>Vehicle number recognition, authorization, gate control, logging and automation flow.</p>
@@ -710,7 +804,7 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
         </div>
 
         <div class="card">
-          <div class="media"><img src="New-Project-1.png" alt="Weighbridge Automation System - KR_Tech" /></div>
+          <div class="media"><img src="New-Project-1.png" alt="Weighbridge Automation System - KR Tech" /></div>
           <div class="card-pad">
             <h3>⚖️ Weighbridge Automation (AI + Sensors)</h3>
             <p>Camera + sensors + display + barriers + records + billing integration for truck weighbridge.</p>
@@ -723,7 +817,7 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
 
       <div class="grid grid-2" style="margin-top:14px;">
         <div class="card">
-          <div class="media"><img src="remote-monitoring-of-servers-com-1.webp" alt="Remote Monitoring Dashboard - KR_Tech" /></div>
+          <div class="media"><img src="remote-monitoring-of-servers-com-1.webp" alt="Remote Monitoring Dashboard - KR Tech" /></div>
           <div class="card-pad">
             <h3>📡 Remote Monitoring & Alerts</h3>
             <p>System health monitoring for farms, machines and panels—alerts via WhatsApp/Call.</p>
@@ -734,7 +828,7 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
         </div>
 
         <div class="card">
-          <div class="media"><img src="Smart-Factory-Ecosystem-Diagram.webp" alt="Smart Factory Ecosystem - KR_Tech" /></div>
+          <div class="media"><img src="Smart-Factory-Ecosystem-Diagram.webp" alt="Smart Factory Ecosystem - KR Tech" /></div>
           <div class="card-pad">
             <h3>🧠 Smart Factory Ecosystem</h3>
             <p>Automation + IoT + AI vision + analytics to improve accuracy and productivity.</p>
@@ -760,7 +854,7 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
       <div class="feature">
         <div class="media">
           <img src="684d85682ade8bae25242d47_67ed51a6da432d260a80f823_67c81a4e220f7f1f485d075c_Supermarkets_Fig3.webp"
-               alt="AI Supermarket Billing - KR_Tech" />
+               alt="AI Supermarket Billing - KR Tech" />
         </div>
 
         <div class="text">
@@ -797,7 +891,7 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
 
         <div class="card">
           <div class="media">
-            <img src="1_tUdFs2QVS7PYZXT2pQ681w.jpg" alt="Small Grocery Smart Billing - KR_Tech" />
+            <img src="1_tUdFs2QVS7PYZXT2pQ681w.jpg" alt="Small Grocery Smart Billing - KR Tech" />
           </div>
           <div class="card-pad">
             <h3>Small Grocery / Mini Mart</h3>
@@ -817,7 +911,7 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
         <div class="card">
           <div class="media">
             <img src="684d85682ade8bae25242d40_67ed51a6da432d260a80f7f5_67c81a2cdaafb86a7bda4d64_Supermarkets_Fig2.webp"
-                 alt="Supermarket Smart Checkout Workflow - KR_Tech" />
+                 alt="Supermarket Smart Checkout Workflow - KR Tech" />
           </div>
           <div class="card-pad">
             <h3>Supermarket / Department Store</h3>
@@ -837,7 +931,7 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
         <div class="card">
           <div class="media">
             <img src="684d85682ade8bae25242d47_67ed51a6da432d260a80f823_67c81a4e220f7f1f485d075c_Supermarkets_Fig3.webp"
-                 alt="Wholesale Billing & Tracking - KR_Tech" />
+                 alt="Wholesale Billing & Tracking - KR Tech" />
           </div>
           <div class="card-pad">
             <h3>Wholesale / Distributor / Godown</h3>
@@ -858,7 +952,7 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
       <div class="grid grid-2" style="margin-top:14px;">
         <div class="card">
           <div class="media">
-            <img src="1_tUdFs2QVS7PYZXT2pQ681w.jpg" alt="Item Detection - KR_Tech" />
+            <img src="1_tUdFs2QVS7PYZXT2pQ681w.jpg" alt="Item Detection - KR Tech" />
           </div>
           <div class="card-pad">
             <h3>How It Works</h3>
@@ -877,7 +971,7 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
         <div class="card">
           <div class="media">
             <img src="684d85682ade8bae25242d40_67ed51a6da432d260a80f7f5_67c81a2cdaafb86a7bda4d64_Supermarkets_Fig2.webp"
-                 alt="Smart Billing System Workflow - KR_Tech" />
+                 alt="Smart Billing System Workflow - KR Tech" />
           </div>
           <div class="card-pad">
             <h3>Optional Add-Ons</h3>
@@ -910,7 +1004,7 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
       <div class="section-title">
         <div>
           <h2>Project Gallery</h2>
-          <p>Visual references of KR Techfocus areas. (Later, you can replace with your real project photos.)</p>
+          <p>Visual references of KR Tech focus areas. (Later, you can replace with your real project photos.)</p>
         </div>
       </div>
 
@@ -968,7 +1062,7 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
     <div class="container">
       <div class="section-title">
         <div>
-          <h2>Contact KR_Tech</h2>
+          <h2>Contact KR Tech</h2>
           <p>Send your requirement. We will suggest the best automation solution and quotation.</p>
         </div>
       </div>
@@ -976,10 +1070,10 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
       <div class="contact-grid">
         <div class="card">
           <div class="card-pad">
-            <h3>KR Tech– Automation Division</h3>
+            <h3>KR Tech – Automation Division</h3>
             <p class="muted">
-              #27, Santhan Kanthan Complex,<br/>
-              Opp. Jeeva Depot,<br/>
+              #27,2nd floor,Block- A,Santhan Kanthan Complex,<br/>
+              Opp. Jeeva Bus Dippo,Erode, Sathy Road,,<br/>
               Gobichettipalayam – 638476,<br/>
               Erode, Tamil Nadu, India
             </p>
@@ -1022,9 +1116,9 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
                 const msg = document.getElementById('msg').value.trim();
 
                 const to = "krtechautomation@gmail.com";
-                const subject = encodeURIComponent("Enquiry - KR TechWebsite");
+                const subject = encodeURIComponent("Enquiry - KR Tech Website");
                 const body = encodeURIComponent(
-                  `Name: ${name}\nPhone: ${phone}\nCity: ${city}\n\nRequirement:\n${msg}\n\nSent from KR TechWebsite`
+                  `Name: ${name}\nPhone: ${phone}\nCity: ${city}\n\nRequirement:\n${msg}\n\nSent from KR Tech Website`
                 );
                 window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
                 return false;
@@ -1043,11 +1137,11 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
         <div class="brand" style="margin-bottom:8px">
           <div class="logo"><span>KR</span></div>
           <div>
-            <div style="font-weight:700">KR_Tech</div>
+            <div style="font-weight:700">KR Tech</div>
             <div class="small">Electrical • Electronics • IoT • AI Computer Vision Automation</div>
           </div>
         </div>
-        <div class="small">© <span id="year"></span> KR_Tech. All Rights Reserved.</div>
+        <div class="small">© <span id="year"></span> KR Tech. All Rights Reserved.</div>
       </div>
 
       <div>
@@ -1058,6 +1152,7 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
           <a href="#industries" class="tag">Industries</a>
           <a href="#solutions" class="tag">Solutions</a>
           <a href="#smartbilling" class="tag">Smart Billing</a>
+          <a href="#video" class="tag">Video</a>
           <a href="#gallery" class="tag">Gallery</a>
           <a href="#contact" class="tag">Contact</a>
         </div>
@@ -1079,15 +1174,55 @@ Maps: https://maps.app.goo.gl/6z7uTkectpx13k889
     <path fill="white" d="M26.67 5.33C23.83 2.49 20.06.93 16.06.93 7.85.93 1.2 7.58 1.2 15.79c0 2.62.68 5.18 1.98 7.44L1 31l7.98-2.09c2.2 1.2 4.67 1.83 7.18 1.83h.01c8.21 0 14.86-6.65 14.86-14.86 0-3.99-1.56-7.76-4.36-10.55zm-10.6 22.9h-.01c-2.22 0-4.4-.6-6.3-1.73l-.45-.27-4.73 1.24 1.26-4.61-.29-.47c-1.22-1.95-1.87-4.2-1.87-6.51 0-6.86 5.58-12.44 12.45-12.44 3.32 0 6.44 1.29 8.79 3.64 2.35 2.35 3.65 5.47 3.65 8.79 0 6.86-5.58 12.44-12.5 12.44z"/>
   </svg>
 </a>
-    <a class="fab call" href="tel:+919655078917" title="Call KR_Tech">
+    <a class="fab call" href="tel:+919655078917" title="Call KR Tech">
       <span style="font-size:22px">📞</span>
     </a>
   </div>
+
+  <script>
+    function loadYT(btn){
+      const wrap = btn.closest('.yt-wrap');
+      if(!wrap || wrap.dataset.loaded) return;
+      const vid = wrap.getAttribute('data-video');
+      wrap.dataset.loaded = "1";
+
+      const iframe = document.createElement('iframe');
+      iframe.className = 'yt-iframe';
+            // YouTube embeds often fail when you open this page as a local file (file://).
+      // Run with a local server (http://localhost) or host online for best compatibility.
+      if(location.protocol === 'file:'){
+        alert('YouTube embed may not work in file:// mode. Please run this website using a local server (example: python -m http.server 8000) then open http://localhost:8000');
+        wrap.dataset.loaded = "";
+        return;
+      }
+      const origin = encodeURIComponent(location.origin);
+      iframe.src = `https://www.youtube.com/embed/${vid}?autoplay=1&rel=0&modestbranding=1&playsinline=1&origin=${origin}`;
+      iframe.title = 'KR Tech Project Demo Video';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowFullscreen = true;
+
+      // remove overlay elements for clean view
+      wrap.innerHTML = '';
+      wrap.appendChild(iframe);
+    }
+  </script>
+
+  <!-- Video SEO (Google Rich Results) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "KR Tech | Automation, IoT & AI Vision – Project Demo",
+    "description": "Real installations and demonstrations by KR Tech: industrial automation, IoT monitoring, AI computer vision counting/inspection, ANPR/ALPR workflows, and customized industrial panels.",
+    "thumbnailUrl": ["https://i.ytimg.com/vi/14iid5CQS7Y/hqdefault.jpg"],
+    "uploadDate": "2026-01-08",
+    "contentUrl": "https://www.youtube.com/watch?v=14iid5CQS7Y",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/14iid5CQS7Y"
+  }
+  </script>
+
 </body>
 </html>
-
-
-
 
 
 
